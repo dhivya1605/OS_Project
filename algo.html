@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CPU Scheduling Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>CPU Scheduling Simulator</h2>
+
+  <label>Process ID:</label>
+  <input type="text" id="pid">
+  <label>Arrival Time:</label>
+  <input type="number" id="arrival">
+  <label>Burst Time:</label>
+  <input type="number" id="burst">
+  <button onclick="addProcess()">Add Process</button>
+
+  <h3>Processes</h3>
+  <table id="processTable">
+    <tr>
+      <th>Process ID</th>
+      <th>Arrival Time</th>
+      <th>Burst Time</th>
+    </tr>
+  </table>
+
+  <h3>Choose Scheduling Algorithm</h3>
+  <button class="btn" onclick="fcfs()">FCFS</button>
+  <button class="btn" onclick="sjf()">SJF</button>
+  <button class="btn" onclick="srtf()">SRTF</button>
+  <button class="btn" onclick="priorityScheduling()">Priority</button>
+  <button class="btn" onclick="roundRobin()">Round Robin</button>
+
+  <h3>Results</h3>
+  <table id="resultTable">
+    <tr>
+      <th>Process ID</th>
+      <th>Arrival Time</th>
+      <th>Burst Time</th>
+      <th>Turnaround Time</th>
+      <th>Waiting Time</th>
+    </tr>
+  </table>
+
+  <!-- Row for displaying averages -->
+  <table id="averagesTable">
+    <tr>
+      <th>Average Turnaround Time</th>
+      <td id="avgTAT">-</td>
+    </tr>
+    <tr>
+      <th>Average Waiting Time</th>
+      <td id="avgWT">-</td>
+    </tr>
+  </table>
+
+  <h3>Gantt Chart</h3>
+  <div id="ganttChart"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
